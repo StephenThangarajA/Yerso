@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#part1{
+    display: flex;
+    flex-direction: row;
+}
+
+#part2{
+    padding-right: 20px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    color: gray;
+    padding-left: 30px;
+}
+
+#maindiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#pricediv{
+    margin-top: 5vh;
+    margin-left: 110vh;
+}
+
+#orderdetails{
+    margin-left: 110vh;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#subpart2{
+    margin-top: 5vh;
+    padding-right: 20px;
+}
+
+.image{
+    height: 15vh; 
+    margin-top: 7vh;
+    padding-right: 20px;
+}
+
+.lspan1{
+    font-size: 25px; 
+    font-weight: bolder; 
+    color: black;
+    font-family:sans-serif;
+}
+
+.rspan1{
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+.rspan2{
+    color:gold;
+    font-size: 15px; 
+    font-weight: bolder;
+    margin-left: 110vh;
+}
+
+.rspan3{
+    color: gold;
+}
+
+.rspan4{
+    color: black;
+    font-size: 15px; 
+    font-weight: bolder;
+    margin-left: 110vh;
+}
+
+.rspan5{
+    font-size: 15px ; 
+    font-weight: lighter; 
+    font-family: sans-serif;
+    color: green;
+}
+
+.rspan6{
+    color: green; 
+    font-size: 15px; 
+    font-weight: bolder;
+}
+
+#emptydiv{
+    background-color:#323030; 
+    height: 7vh;
+}
+
+.top{
+    font-size: 25px; 
+    font-weight: bold;
+    color:white;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.hrline{
+    size:3vh; 
+    color:black;
+}
+
+.aspan{
+    text-decoration: none;
+    color: black;
+}
+
+.aspan:hover{
+    color:aqua;
+}
+
+.CartBtn{
+    width: 140px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: #323030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    position: relative;
+}
+  
+.IconContainer{
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .5s;
+}
+  
+.icon{
+    border-radius: 1px;
+}
+  
+.text{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:aqua;
+    z-index: 1;
+    transition-duration: .5s;
+    font-size: 1.04em;
+    font-weight: 600;
+}
+  
+.CartBtn:hover .IconContainer{
+    transform: translateX(58px);
+    border-radius: 40px;
+    transition-duration: .5s;
+}
+  
+.CartBtn:hover .text{
+    transform: translate(10px,0px);
+    transition-duration: .5s;
+}
+  
+.CartBtn:active{
+    transform: scale(0.95);
+    transition-duration: .5s;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color:#323030;
+    border-radius: 1.25em;
+    transition: all 0.2s linear;
+}
+   
+.tooltip{
+    position: relative;
+    display: inline-block;
+    padding:10px;
+}
+   
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 4em;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 110%;
+}
+   
+.tooltip .tooltiptext::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+   
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}

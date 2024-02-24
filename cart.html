@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Asserts/logo.png" type="image/icon type">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="cart.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="emptydiv">
+        <p class="top">Shopping Cart</p>
+    </div>
+    <div id="maindiv">
+        <div id="part1">
+            <img class="image" src="./Asserts/Electronics/Laptops/Dell XPS 15/dell1.png"/>
+        </div>
+        <div id="subpart2">
+            <div id="spandiv1">
+                <span class="lspan1"><a class="aspan" href="./Asserts/Electronics/Laptops/Dell XPS 15/dell.html">Dell XPS 15</a></span><br>
+            </div><br>
+            <div id="uldiv">
+                <ul>
+                    <li>Intel Core i5 Processor(11th Gen)</li>
+                    <li>16GB LPDDR4X RAM</li>
+                    <li>64 bit Windows 10 Operating System</li>
+                    <li>512GB SSD</li>
+                    <li>13.3 Inch Full HD LED Backlit Infinity Edge Display</li>
+                    <li>1 year brand warranty</li>
+                </ul>
+            </div>
+        </div>
+    <div id="part2">
+        <div id="pricediv">
+            <span id="dellPrice" class="rspan1">₹91,999</span><br>
+        </div><br>
+        <div id="spandiv2">
+            <span class="rspan2">4.5<span class="rspan3"><i class = "fas fa-star"></i></span><br></span>
+            <span class="rspan4"> 70,431Ratings&amp;8,242Reviews</span>
+        </div><br><br>
+        <div id="orderdetails">
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+              </div>
+            <button id="removeFromCartBtn" class="CartBtn">
+                <span class="IconContainer"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="aqua" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                </span>
+                <p class="text">Remove from Cart</p>
+            </button>
+        </div>    
+    </div>
+    </div><br>
+    <hr class="hrline">
+
+    <div id="maindiv">
+        <div id="part1">
+            <img class="image" src="./Asserts/Electronics/Laptops/HP Sectre x360/hp1.webp"/>
+        </div>
+        <div id="subpart2">
+            <div id="spandiv1">
+                <span class="lspan1"><a class="aspan" href="./Asserts/Electronics/Laptops/HP Sectre x360/hp.html">HP Sectre x360</a></span><br>
+            </div><br>
+            <div id="uldiv">
+                <ul>
+                    <li>Intel Core i5 Processor(8th Gen)</li>
+                    <li>8GB DDR4 RAM</li>
+                    <li>64 bit Windows 10 Operating System</li>
+                    <li>256GB SSD</li>
+                    <li>13.3 inch Full HD LED Backlit IPS Touch Display with Corning Gorilla Glass</li>
+                    <li>1 year brand warranty</li>
+                </ul>
+            </div>
+        </div>
+    <div id="part2">
+        <div id="pricediv">
+            <span id="hpPrice" class="rspan1">₹1,05,999</span><br>
+        </div><br>
+        <div id="spandiv2">
+            <span class="rspan2">4.5<span class="rspan3"><i class = "fas fa-star"></i></span><br></span>
+            <span class="rspan4"> 70,431Ratings&amp;8,242Reviews</span>
+        </div><br><br>
+        <div id="orderdetails">
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+              </div>
+            <button id="removeFromCartBtn" class="CartBtn">
+                <span class="IconContainer"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="aqua" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                </span>
+                <p class="text">Remove from Cart</p>
+            </button>
+        </div>    
+    </div>
+    </div><br>
+    <hr class="hrline">
+    <div class="total">
+        <div class="tot" id="totalPriceDisplay">Total: ₹0</div><br>
+        <button class="cssbuttons-io-button" onclick="window.location.href = 'checkoutpage.html';">Checkout
+            <div class="icon">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="aqua"></path>
+                </svg>
+            </div>
+          </button>  
+    </div>
+</body>          
+    <script src="cart.js"></script>
+</html>
