@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Asserts/logo.png" type="image/icon type">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+.maindiv{
+    background-color:#323030; 
+    height: 7vh;
+}
+
+.top{
+    font-size: 25px; 
+    font-weight: bold;
+    color:white;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.div3{
+    margin-top: 22px;
+}
+
+.div3 button{
+    display: inline-block;
+    font-size: 16px;
+    font-family: inherit;
+    text-transform: uppercase;
+    padding: 15px 16px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.placeorder-btn{
+    background-color:#323030;
+    border: 2px solid aqua;
+    margin-right: 8px;
+    border-radius: 20px;
+    float: right;
+}
+
+.placeorder-btn:hover{
+    background-color: aqua;
+    color: #323030;
+    border: 2px solid #323030;
+    box-shadow: 0 0 10px 5px #323030;
+}
+
+.proceed-btn{
+    height: 30px;
+    width: 80px;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.subdiv1{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.subdiv2{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.subdiv11{
+    text-align: center;
+    width:450px;
+    padding-top: 50px;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding: 15px;
+}
+
+.subdiv12{
+    padding-top: 50px;
+    padding-left: 200px;
+    width: fit-content;
+    padding: 20px;
+}
+
+.subdiv21{
+    text-align: center;
+    width:450px;
+    padding-top: 50px;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding: 15px;
+}
+
+.subdiv22{
+    padding-top: 50px;
+    padding-left: 200px;
+    width: fit-content;
+    padding: 20px;
+}
+
+.name{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 123px;
+    font-family: arial;
+    color: #323030;
+}
+
+.phoneno{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 85px;
+    font-family: arial;
+    color: #323030;
+}
+
+.address{
+    display: inline-block;
+    float: left;
+    text-align: right;
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 100px;
+    font-family: arial;
+    color: #323030;
+}
+
+#address{
+    height: 100px;
+    width: 300px;
+}
+
+.pin{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 90px;
+    font-family: arial;
+    color: #323030;
+}
+
+.input{
+    border-width: 2px;
+    border-color: black;
+    box-shadow: none;
+    outline: none;
+    color: solid;
+    height:30px;
+    width:300px;
+}
+
+.line{
+    width: 1050px;
+    float: right;
+    height: 2px;
+    background-color: #323030;
+}
+
+.radio{
+    font-weight: bolder;
+    font-size:x-large;
+    font-family: arial;
+    color: #323030;
+}
+
+.username{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 20px;
+    font-family: arial;
+    color: #323030;
+}
+
+.cardno{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 40px;
+    font-family: arial;
+    color: #323030;
+}
+
+.cvc{
+    font-weight: bolder;
+    font-size: larger;
+    padding-right: 75px;
+    font-family: arial;
+    color: #323030;
+}
+
+.hidden{
+    display:none;
+}
+
+.acc{
+    height: 200px;
+    width: 200px;
+}
+
+.pay{
+    height: 200px;
+    width: 200px;
+}
+
+.left{
+    color:#323030;
+    font-family: arial;
+}
+
+.fa-solid {
+    color: black;
+}
+    </style>
+</head>
+<body>
+    <div class="maindiv">
+        <div class="div1">
+            <p class="top">Checkout Page</p>
+        </div><br><br><br>
+        <div class="div2">
+            <div class="subdiv1">
+                <div class="subdiv11">
+                    <img class="acc" src="./Asserts/account.svg">
+                    <p class="left">Personal Details</p>
+                </div>
+                <div class="subdiv12">    
+                    <label for="name" class="name" onblur="validateName()">Name:</label>
+		            <input type="text" id="name" class="input" name="name" placeholder="Your name.." required><br><br><br>
+                    <label for="phoneno" class="phoneno" onkeyup="validatePhoneNumber">Phone No:</label>
+		            <input type="tel" id="phoneno" class="input" name="phoneno" placeholder="Your phone.." required pattern="[0-9]{10}" minlength="10" maxlength="10"><br><br><br>
+                    <label for="address" class="address" onkeyup="validateAddress()">Address:</label>
+		            <textarea id="address" class="input" name="address" placeholder="Your address.." required></textarea><br><br><br>
+                    <label for="pin" class="pin" onkeyup="validatePinCode()">Pin Code:</label>
+                    <input type="tel" id="pin" class="input" name="pin" placeholder="Your pincode.." required pattern="[0-9]{6}" minlength="6" maxlength="6"><br><br><br>
+                </div> 
+            </div>
+            <hr class="line"><br>
+            <div class="subdiv2">
+                <div class="subdiv21">
+                    <img class="pay" src="./Asserts/pay.svg">
+                    <p class="left">Payment Details</p>
+                </div>
+                <div class="subdiv22">
+                    <input type="radio" id="netbanking" name="payment_method" value="NetBanking">
+                    <label for="netbanking" class="radio">Net Banking  <i class="fa-solid fa-building-columns"></i></label><br><br>
+                    <div id="netbankingDetails" class="hidden"><br>
+                        <label for="netbankingUsername" class="username">Username:</label>
+                        <input type="text" id="netbankingUsername" class="input" name="netbankingUsername" placeholder="Your net banking username.." required>
+                        <br><br><br>
+                        <label for="netbankingcardno" class="cardno">Card No:</label>
+                        <input type="text" id="netbankingcardno" class="input" name="netbankingcardno" pattern="[0-9]{16}" minlength="16" maxlength="16" placeholder="Your net banking card number.." required>
+                        <br><br><br>
+                        <label for="netbankingcvc" class="cvc">CVC:</label>
+                        <input type="text" id="netbankingcvc" class="input" name="netbankingcvc" pattern="[0-9]{4}" minlength="4" maxlength="4" placeholder="Your net banking cvc.." required>
+                        <br><br><br>
+                        <button type="button" class="proceed-btn" onclick="proceedWithNetBanking()">Proceed</button>
+                    </div><br><br><br>
+                    
+                    <input type="radio" id="upi" name="payment_method" value="UPI">
+                    <label for="upi" class="radio">UPI  <i class="fa-solid fa-money-bill-transfer"></i></label><br><br>
+                    <div id="upiDetails" class="hidden"><br>
+                        <label for="upiId" class="radio" onkeyup="validateUpiId()">UPI ID:</label>
+                        <input type="text" id="upiId" class="input" name="upiId" placeholder="Your UPI ID.." required>
+                        <button type="button" class="proceed-btn" onclick="proceedWithUPI()">Proceed</button>
+                    </div><br><br><br>
+                    
+                    <input type="radio" id="cod" name="payment_method" value="CashonDelivery">
+                    <label for="cod" class="radio">Cash on Delivery  <i class="fa-solid fa-money-bill"></i></label><br><br>
+                </div>    
+            </div>
+            <hr class="line"><br>
+        </div>
+
+        <div class="div3">
+            <a href="./success.html "> <button type = "button" class = "placeorder-btn" onclick="validateAndPlaceOrder()">Place Order</button></a>
+        </div>
+    </div>
+</body>
+<script>
+    function validateAndPlaceOrder() {
+    var name = document.getElementById("name").value.trim();
+    var phone = document.getElementById("phoneno").value.trim();
+    var address = document.getElementById("address").value.trim();
+    var pin = document.getElementById("pin").value.trim();
+    if (name === "" || phone === "" || address === "" || pin === "") {
+        alert("Please fill in all personal details.");
+    } else {
+        var paymentMethod = document.querySelector('input[name="payment_method"]:checked');
+        if (paymentMethod) {
+            if (paymentMethod.value === 'UPI') {
+                var upiId = document.getElementById('upiId').value.trim();
+                if (upiId === "") {
+                    alert("Please enter your UPI ID to proceed with UPI payment.");
+                } else {
+                    alert("Order placed successfully!");
+                }
+            } else if (paymentMethod.value === 'NetBanking') {
+                var netbankingUsername = document.getElementById('netbankingUsername').value.trim();
+                var netbankingcardno = document.getElementById('netbankingcardno').value.trim();
+                var netbankingcvc = document.getElementById('netbankingcvc').value.trim();
+                if (netbankingUsername === ""){    
+                    alert("Please enter your Net Banking Username to proceed with UPI payment.");
+                }
+                else if (netbankingcardno === ""){
+                    alert("Please enter your Net Banking card number to proceed with UPI payment.");
+                }
+                else if (netbankingcvc === ""){
+                    alert("Please enter your Net Banking CVC to proceed with UPI payment.");
+                }
+                else {
+                    alert("Order placed successfully!")
+                }
+            } else if (paymentMethod.value === 'CashonDelivery') {
+                alert("Order placed successfully!");
+            }
+        } else {
+            alert("Order unsuccessful. Please select a payment method.");
+        }
+    }
+}
+
+
+function handlePaymentMethodChange() {
+    var upiDetails = document.getElementById('upiDetails');
+    var netbankingDetails = document.getElementById('netbankingDetails');
+
+    if (document.getElementById('upi').checked) {
+        upiDetails.classList.remove('hidden');
+        netbankingDetails.classList.add('hidden');
+    } else if (document.getElementById('netbanking').checked) {
+        netbankingDetails.classList.remove('hidden');
+        upiDetails.classList.add('hidden');
+    } else {
+        upiDetails.classList.add('hidden');
+        netbankingDetails.classList.add('hidden');
+    }
+}
+
+
+function proceedWithNetBanking() {
+    var netbankingUsername = document.getElementById('netbankingUsername').value;
+    var netbankingcardno = document.getElementById('netbankingcardno').value;
+    var netbankingcvc = document.getElementById('netbankingcvc').value;
+    console.log('Proceeding with Net Banking payment. Username:', netbankingUsername);
+}
+
+
+function proceedWithUPI() {
+    var upiId = document.getElementById('upiId').value;
+    console.log('Proceeding with UPI payment. UPI ID:', upiId);
+}
+
+
+var radioButtons = document.querySelectorAll('input[name="payment_method"]');
+radioButtons.forEach(function (radio) {
+    radio.addEventListener('change', handlePaymentMethodChange);
+});
+
+
+var phoneNumberInput = document.getElementById("phoneno");
+phoneNumberInput.addEventListener("input", function () {
+    validatePhoneNumber();
+});
+function validatePhoneNumber() {
+    var phoneNumberValue = phoneNumberInput.value;
+    var numericRegex = /^[0-9]+$/;
+    if (numericRegex.test(phoneNumberValue)) {
+        console.log("Phone number is valid: " + phoneNumberValue);
+        phoneNumberInput.style.borderColor = "green";
+    } else {
+        phoneNumberInput.style.borderColor = "red";
+        alert("Please enter a valid 10-digit phone number")
+    }
+}
+
+
+var pinCodeInput = document.getElementById("pin");
+phoneNumberInput.addEventListener("input", function () {
+    validatePinCode();
+});
+function validatePinCode() {
+    var pinCodeInput = document.getElementById("pin");
+    var pinCodeValue = pinCodeInput.value;
+    var pinCodeRegex = /^[0-9]{6}$/;
+    if (pinCodeRegex.test(pinCodeValue)) {
+        console.log("Pin code is valid: " + pinCodeValue);
+        pinCodeInput.style.borderColor = "green";
+    } else {
+        pinCodeInput.style.borderColor = "red";
+        alert("Please enter a valid 6-digit pin code.");
+    }
+}
+
+
+var nameInput = document.getElementById("name");
+phoneNumberInput.addEventListener("input", function () {
+    validateName();
+});
+function validateName() {
+    var nameInput = document.getElementById("name");
+    var nameValue = nameInput.value;
+    var nameRegex = /^[a-zA-Z]{3,}$/;
+    if (nameRegex.test(nameValue)) {
+        console.log("Name is valid: " + nameValue);
+        nameInput.style.borderColor = "green";
+    } else {
+        nameInput.style.borderColor = "red";
+        alert("Please enter a valid name with at least 3 alphabets.");
+    }
+}
+
+
+var addressInput = document.getElementById("address");
+phoneNumberInput.addEventListener("input", function () {
+    validateAddress();
+});
+function validateAddress() {
+    var addressInput = document.getElementById("address");
+    var addressValue = addressInput.value.trim();
+    if (addressValue !== "") {
+        console.log("Address is valid: " + addressValue);
+        addressInput.style.borderColor = "green";
+    } else {
+        addressInput.style.borderColor = "red";
+        alert("Please enter a valid address.");
+    }
+}
+
+</script>
+</html>

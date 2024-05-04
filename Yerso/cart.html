@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Asserts/logo.png" type="image/icon type">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+
+#part1{
+    display: flex;
+    flex-direction: row;
+}
+
+#part2{
+    padding-right: 20px;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    color: gray;
+    padding-left: 30px;
+}
+
+#maindiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#pricediv{
+    margin-top: 5vh;
+    margin-left: 110vh;
+}
+
+#orderdetails{
+    margin-left: 110vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#subpart2{
+    margin-top: 5vh;
+    padding-right: 20px;
+}
+
+.image{
+    height: 15vh; 
+    margin-top: 7vh;
+    padding-right: 20px;
+}
+
+.lspan1{
+    font-size: 25px; 
+    font-weight: bolder; 
+    color: black;
+    font-family:sans-serif;
+}
+
+.rspan1{
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+.rspan2{
+    color:gold;
+    font-size: 15px; 
+    font-weight: bolder;
+    margin-left: 110vh;
+}
+
+.rspan3{
+    color: gold;
+}
+
+.rspan4{
+    color: black;
+    font-size: 15px; 
+    font-weight: bolder;
+    margin-left: 110vh;
+}
+
+.rspan5{
+    font-size: 15px ; 
+    font-weight: lighter; 
+    font-family: sans-serif;
+    color: green;
+}
+
+.rspan6{
+    color: green; 
+    font-size: 15px; 
+    font-weight: bolder;
+}
+
+#emptydiv{
+    background-color:#323030; 
+    height: 7vh;
+}
+
+.top{
+    font-size: 25px; 
+    font-weight: bold;
+    color:white;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.hrline{
+    size:3vh; 
+    color:black;
+}
+
+.aspan{
+    text-decoration: none;
+    color: black;
+}
+
+.aspan:hover{
+    color:aqua;
+}
+
+.CartBtn{
+    width: 140px;
+    height: 40px;
+    border-radius: 12px;
+    border: none;
+    background-color: #323030;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    position: relative;
+}
+  
+.IconContainer{
+    position: absolute;
+    left: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    transition-duration: .5s;
+}
+  
+.icon{
+    border-radius: 1px;
+}
+  
+.text{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:aqua;
+    z-index: 1;
+    transition-duration: .5s;
+    font-size: 1.04em;
+    font-weight: 600;
+}
+  
+.CartBtn:hover .IconContainer{
+    transform: translateX(58px);
+    border-radius: 40px;
+    transition-duration: .5s;
+}
+  
+.CartBtn:hover .text{
+    transform: translate(10px,0px);
+    transition-duration: .5s;
+}
+  
+.CartBtn:active{
+    transform: scale(0.95);
+    transition-duration: .5s;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color:#323030;
+    border-radius: 1.25em;
+    transition: all 0.2s linear;
+}
+   
+.tooltip{
+    position: relative;
+    display: inline-block;
+    padding:10px;
+}
+   
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 4em;
+    background-color: rgba(0, 0, 0, 0.253);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 110%;
+}
+   
+.tooltip .tooltiptext::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+   
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+
+.counter{
+    width: 150px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+}
+
+.counter input{
+    width: 50px;
+    border: 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: #323030;
+    color: aqua;
+    appearance: none;
+    outline: 0;
+}
+
+.counter span{
+    display: block;
+    font-size: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #323030;
+    user-select: none;
+    border: 20px;
+}
+
+.total{
+    display:flex;
+    flex-direction: column;
+    padding-left: 1350px;
+    padding-right: 20px;
+}
+
+.tot{
+    font-family: arial;
+    font-size: larger;
+}
+
+.cssbuttons-io-button{
+    background: #323030;
+    color: aqua;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #323030;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+  
+.cssbuttons-io-button .icon{
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #323030;
+    right: 0.3em;
+    transition: all 0.3s;
+}
+  
+.cssbuttons-io-button:hover .icon{
+    width: calc(100% - 0.6em);
+}
+  
+.cssbuttons-io-button .icon svg{
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #7b52b9;
+}
+  
+.cssbuttons-io-button:hover .icon svg{
+    transform: translateX(0.1em);
+}
+  
+.cssbuttons-io-button:active .icon{
+    transform: scale(0.95);
+}  
+    </style>
+</head>
+<body>
+    <div id="emptydiv">
+        <p class="top">Shopping Cart</p>
+    </div>
+    <div id="maindiv">
+        <div id="part1">
+            <img class="image" src="./Asserts/Electronics/Laptops/Dell XPS 15/dell1.png"/>
+        </div>
+        <div id="subpart2">
+            <div id="spandiv1">
+                <span class="lspan1"><a class="aspan" href="./Asserts/Electronics/Laptops/Dell XPS 15/dell.html">Dell XPS 15</a></span><br>
+            </div><br>
+            <div id="uldiv">
+                <ul>
+                    <li>Intel Core i5 Processor(11th Gen)</li>
+                    <li>16GB LPDDR4X RAM</li>
+                    <li>64 bit Windows 10 Operating System</li>
+                    <li>512GB SSD</li>
+                    <li>13.3 Inch Full HD LED Backlit Infinity Edge Display</li>
+                    <li>1 year brand warranty</li>
+                </ul>
+            </div>
+        </div>
+    <div id="part2">
+        <div id="pricediv">
+            <span id="dellPrice" class="rspan1">₹91,999</span><br>
+        </div><br>
+        <div id="spandiv2">
+            <span class="rspan2">4.5<span class="rspan3"><i class = "fas fa-star"></i></span><br></span>
+            <span class="rspan4"> 70,431Ratings&amp;8,242Reviews</span>
+        </div><br><br>
+        <div id="orderdetails">
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+              </div>
+            <button id="removeFromCartBtn" class="CartBtn">
+                <span class="IconContainer"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="aqua" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                </span>
+                <p class="text">Remove from Cart</p>
+            </button>
+        </div>    
+    </div>
+    </div><br>
+    <hr class="hrline">
+
+    <div id="maindiv">
+        <div id="part1">
+            <img class="image" src="./Asserts/Electronics/Laptops/HP Sectre x360/hp1.webp"/>
+        </div>
+        <div id="subpart2">
+            <div id="spandiv1">
+                <span class="lspan1"><a class="aspan" href="./Asserts/Electronics/Laptops/HP Sectre x360/hp.html">HP Sectre x360</a></span><br>
+            </div><br>
+            <div id="uldiv">
+                <ul>
+                    <li>Intel Core i5 Processor(8th Gen)</li>
+                    <li>8GB DDR4 RAM</li>
+                    <li>64 bit Windows 10 Operating System</li>
+                    <li>256GB SSD</li>
+                    <li>13.3 inch Full HD LED Backlit IPS Touch Display with Corning Gorilla Glass</li>
+                    <li>1 year brand warranty</li>
+                </ul>
+            </div>
+        </div>
+    <div id="part2">
+        <div id="pricediv">
+            <span id="hpPrice" class="rspan1">₹1,05,999</span><br>
+        </div><br>
+        <div id="spandiv2">
+            <span class="rspan2">4.5<span class="rspan3"><i class = "fas fa-star"></i></span><br></span>
+            <span class="rspan4"> 70,431Ratings&amp;8,242Reviews</span>
+        </div><br><br>
+        <div id="orderdetails">
+            <div class="counter">
+                <span class="down" onClick='decreaseCount(event, this)'>-</span>
+                <input type="text" value="1">
+                <span class="up" onClick='increaseCount(event, this)'>+</span>
+              </div>
+            <button id="removeFromCartBtn" class="CartBtn">
+                <span class="IconContainer"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="aqua" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+                </span>
+                <p class="text">Remove from Cart</p>
+            </button>
+        </div>    
+    </div>
+    </div><br>
+    <hr class="hrline">
+    <div class="total">
+        <div class="tot" id="totalPriceDisplay">Total: ₹0</div><br>
+        <button class="cssbuttons-io-button" onclick="window.location.href = 'checkoutpage.html';">Checkout
+            <div class="icon">
+                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="aqua"></path>
+                </svg>
+            </div>
+          </button>  
+    </div>
+</body>          
+    <script>
+    function increaseCount(a, b) {
+    var input = b.previousElementSibling;
+    var value = parseInt(input.value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    input.value = value;
+}
+  function decreaseCount(a, b) {
+    var input = b.nextElementSibling;
+    var value = parseInt(input.value, 10);
+    if (value > 1) {
+      value = isNaN(value) ? 0 : value;
+      value--;
+      input.value = value;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const removeFromCartBtn = document.getElementById("removeFromCartBtn");
+    removeFromCartBtn.addEventListener("click", function() {
+        const mainDiv = document.getElementById("maindiv");
+        mainDiv.style.display = "none";
+        alert("Product removed from cart!");
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const removeButtons = document.querySelectorAll(".removeCartItem");
+    removeButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const productDiv = button.closest("#maindiv");
+            if (productDiv) {
+                productDiv.style.display = "none";
+                alert("Product removed from cart!"); 
+                updateTotalPrice();  
+            }
+        });
+    });
+    function updateTotalPrice() {
+        const dellPrice = document.getElementById("dellPrice").innerText.replace('₹', '').replace(/,/g, '');
+        const hpPrice = document.getElementById("hpPrice").innerText.replace('₹', '').replace(/,/g, '');
+        const totalPrice = parseInt(dellPrice) + parseInt(hpPrice);
+        document.getElementById("totalPriceDisplay").innerText = "Total: ₹" + formatNumber(totalPrice);
+    }
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+    }
+    updateTotalPrice();
+});
+    </script>
+</html>
