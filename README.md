@@ -41,3 +41,24 @@ To run the Yerso E-commerce website locally on your machine, follow these steps:
 1. Clone this repository:
    ```bash
    git clone https://github.com/stephenthangaraja/yerso-ecommerce.git
+   ```
+
+---
+
+## Contributing
+
+We welcome contributions to the Yerso E-commerce website! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Commit your changes.
+4. Push your changes to your forked repository.
+5. Submit a pull request to the main repository.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+
+## 📧 Contact
+
+For any queries or support, feel free to reach out to the project maintainer, **Stephen Thangaraj**.
